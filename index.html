@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISWA AI 2026 | Welcome</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="landing-body">
+
+    <div class="video-overlay"></div>
+    <video id="bg-video" loop muted playsinline preload="auto">
+        <source src="assets/video.mp4" type="video/mp4">
+    </video>
+    <audio id="bg-music" loop preload="auto">
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="first-touch-layer" class="interaction-layer">
+        <p class="tap-hint">TAP ANYWHERE TO INITIALIZE INTERFACE</p>
+    </div>
+
+    <main class="landing-container hidden" id="welcome-content">
+        <div class="glitch-wrapper">
+            <h1 class="main-title" data-text="WELCOME">WELCOME</h1>
+            <h1 class="main-title neon-text" data-text="BISWA AI">BISWA AI</h1>
+            <h1 class="main-title" data-text="2026">2026</h1>
+        </div>
+        <p class="subtitle typing-text">Powered by Artificial Intelligence</p>
+    </main>
+
+    <div id="action-layer" class="action-layer hidden">
+        <button class="neon-btn" onclick="window.location.href='chat.html'">
+            <span class="btn-glow"></span>
+            OPEN BISWA AI
+        </button>
+    </div>
+
+    <footer class="landing-footer">
+        <p>&copy; 2026 BISWA AI | Developer: Biswa</p>
+    </footer>
+
+    <script src="js/landing.js"></script>
+</body>
+</html>
