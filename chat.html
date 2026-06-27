@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BISWA AI Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="app-body dark-theme">
+
+    <div class="app-layout">
+        <!-- Collapsible Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <i class="fa-solid fa-robot brand-icon"></i>
+                <span>Navigation</span>
+                <button class="toggle-sidebar-btn" id="close-sidebar-btn"><i class="fa-solid fa-angle-left"></i></button>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active" data-target="chat-panel"><i class="fa-solid fa-message"></i> Chat Workspace</a>
+                <a href="#" class="menu-item" data-target="tools-panel"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Tools</a>
+                <a href="#" class="menu-item" data-target="about-panel"><i class="fa-solid fa-circle-info"></i> About</a>
+                <a href="#" class="menu-item" data-target="contact-panel"><i class="fa-solid fa-address-card"></i> Contact</a>
+                <a href="#" class="menu-item" data-target="settings-panel"><i class="fa-solid fa-gear"></i> Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Workspace Area -->
+        <main class="main-workspace">
+            <!-- Universal Top Header -->
+            <header class="app-header">
+                <button class="menu-toggle-btn" id="open-sidebar-btn"><i class="fa-solid fa-bars"></i></button>
+                <div class="brand-info">
+                    <h2>BISWA AI <span class="badge">2026</span></h2>
+                    <p>Powered by ChatGPT &bull; Dev: Biswa</p>
+                </div>
+                <div class="header-actions">
+                    <button id="new-chat-btn" title="New Chat"><i class="fa-solid fa-plus"></i> <span>New</span></button>
+                    <button id="clear-chat-btn" title="Clear Grid"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+            </header>
+
+            <!-- Workspace Viewport Wrapper -->
+            <div class="workspace-viewport">
+                
+                <!-- Tab Panel: Chat System -->
+                <div id="chat-panel" class="view-panel active">
+                    <div class="chat-scroller" id="chat-scroller">
+                        <div class="message system-msg">
+                            <div class="avatar"><i class="fa-solid fa-shield-halved"></i></div>
+                            <div class="msg-bubble">
+                                <h4>System Matrix Online</h4>
+                                <p>Welcome back. Secure connection handshake finalized. Let's build the future.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-container-box">
+                        <div class="input-wrapper">
+                            <textarea id="chat-input" rows="1" placeholder="Ask anything..."></textarea>
+                            <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Panel: AI Tools Grid -->
+                <div id="tools-panel" class="view-panel">
+                    <h2 class="section-title">Core AI Node Tools</h2>
+                    <div class="tools-grid">
+                        <div class="tool-card" onclick="useTool('Text Summarizer')"><i class="fa-solid fa-compress"></i><h3>Summarizer</h3></div>
+                        <div class="tool-card" onclick="useTool('Translator')"><i class="fa-solid fa-language"></i><h3>Translator</h3></div>
+                        <div class="tool-card" onclick="useTool('Grammar Checker')"><i class="fa-solid fa-spell-check"></i><h3>Grammar Node</h3></div>
+                        <div class="tool-card" onclick="useTool('Email Writer')"><i class="fa-solid fa-envelope-open-text"></i><h3>Email Writer</h3></div>
+                        <div class="tool-card" onclick="useTool('Coding Assistant')"><i class="fa-solid fa-code"></i><h3>Code Engine</h3></div>
+                    </div>
+                </div>
+
+                <!-- Tab Panel: Settings System -->
+                <div id="settings-panel" class="view-panel">
+                    <h2 class="section-title">System Settings</h2>
+                    <div class="settings-list glass-card">
+                        <div class="setting-row">
+                            <label>UI Theme Array</label>
+                            <select id="theme-select">
+                                <option value="dark">Matrix Black (Default)</option>
+                                <option value="light">Solarized Light</option>
+                            </select>
+                        </div>
+                        <div class="setting-row">
+                            <label>Atmospheric Audio Engine</label>
+                            <input type="checkbox" id="ambient-audio-toggle" checked>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Panel: About Core -->
+                <div id="about-panel" class="view-panel">
+                    <div class="glass-card layout-center text-center">
+                        <i class="fa-solid fa-atom giant-icon neon-text-glow"></i>
+                        <h1>BISWA AI</h1>
+                        <p class="muted">Version 2026 Stable Deployment</p>
+                        <hr class="divider">
+                        <p class="quote">"Making AI simple, fast, and accessible for everyone."</p>
+                        <p class="muted">Engineered utilizing OpenAI API architectures.</p>
+                    </div>
+                </div>
+
+                <!-- Tab Panel: Contact Vector -->
+                <div id="contact-panel" class="view-panel">
+                    <div class="glass-card layout-center text-center">
+                        <h2>Secure Core Vector Contacts</h2>
+                        <p>Establish direct pipeline with Main Developer: <strong>Biswa</strong></p>
+                        <div class="social-links-container">
+                            <a href="https://instagram.com" target="_blank" class="social-link instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://github.com" target="_blank" class="social-link github"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="mailto:test@example.com" class="social-link email"><i class="fa-solid fa-envelope"></i> Core Mail</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+  </html>
+  
